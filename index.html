@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Beauty Serum | LUMIÈRE</title>
+
+  <!-- dataLayer 初期化 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
+  <!-- Google Tag Manager をここに設置 -->
+  <!-- GTM Head Script: <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf8f5;
+      --blush: #f2e8e0;
+      --rose: #c9a99a;
+      --deep-rose: #a07060;
+      --text: #3a2e2b;
+      --text-light: #8a7570;
+      --gold: #c8a97e;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #ede8e3;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .cart-icon {
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, var(--blush) 0%, var(--cream) 60%);
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      color: var(--rose);
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 7vw, 52px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    /* ── Product Card ── */
+    .product-card {
+      max-width: 480px;
+      margin: 0 auto 60px;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(160,112,96,0.10);
+      padding-bottom: 36px;
+    }
+
+    /* SVG Placeholder Image */
+    .product-image-wrap {
+      background: linear-gradient(145deg, #f9ede7 0%, #ede0d8 100%);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-image-wrap::before {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.5) 0%, rgba(201,169,154,0.15) 100%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .bottle-svg {
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 8px 24px rgba(160,112,96,0.25));
+    }
+
+    .product-info {
+      padding: 28px 32px 0;
+    }
+    .product-brand {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 6px;
+    }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .product-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+    .product-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .badge {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--rose);
+      color: var(--rose);
+    }
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .price-note {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+    .tax-note {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+
+    /* ── Add to Cart Button ── */
+    #add-to-cart-button {
+      width: 100%;
+      height: 52px;
+      background: linear-gradient(135deg, var(--deep-rose) 0%, var(--rose) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 26px;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    #add-to-cart-button:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+    #add-to-cart-button:active {
+      transform: translateY(0);
+    }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--text);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), opacity 0.3s;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 999;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ── Features ── */
+    .features {
+      max-width: 480px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .features-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+    .feature-list {
+      display: grid;
+      gap: 16px;
+    }
+    .feature-item {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .feature-text h3 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .feature-text p {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+      border-top: 1px solid #ede8e3;
+      background: var(--white);
+    }
+
+    @media (max-width: 520px) {
+      .product-info { padding: 22px 22px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) をここに設置 -->
+  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+  <header>
+    <a href="index.html" class="logo">LUMIÈRE</a>
+    <span class="cart-icon">🛒</span>
+  </header>
+
+  <section class="hero">
+    <p class="hero-eyebrow">New Arrival</p>
+    <h1 class="hero-title">AI Beauty<br>Serum</h1>
+  </section>
+
+  <main>
+    <div class="product-card">
+      <div class="product-image-wrap">
+        <!-- CSS/SVGによる美容液ボトルのプレースホルダー -->
+        <svg class="bottle-svg" width="100" height="200" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- キャップ -->
+          <rect x="36" y="8" width="28" height="14" rx="5" fill="#b08878"/>
+          <!-- ネック -->
+          <rect x="42" y="22" width="16" height="12" rx="3" fill="#c9a99a"/>
+          <!-- ボトル本体 -->
+          <rect x="24" y="34" width="52" height="120" rx="14" fill="url(#bottleGrad)"/>
+          <!-- ハイライト -->
+          <rect x="30" y="42" width="10" height="60" rx="5" fill="rgba(255,255,255,0.35)"/>
+          <!-- ラベル -->
+          <rect x="28" y="88" width="44" height="52" rx="6" fill="rgba(255,255,255,0.85)"/>
+          <text x="50" y="108" font-family="Georgia,serif" font-size="7" fill="#a07060" text-anchor="middle" letter-spacing="1">AI BEAUTY</text>
+          <text x="50" y="120" font-family="Georgia,serif" font-size="6" fill="#c9a99a" text-anchor="middle" letter-spacing="1">SERUM</text>
+          <line x1="34" y1="125" x2="66" y2="125" stroke="#e0cfc8" stroke-width="0.8"/>
+          <text x="50" y="134" font-family="Georgia,serif" font-size="5" fill="#b08878" text-anchor="middle">30ml</text>
+          <!-- ボトム -->
+          <ellipse cx="50" cy="154" rx="26" ry="5" fill="rgba(0,0,0,0.06)"/>
+          <defs>
+            <linearGradient id="bottleGrad" x1="24" y1="34" x2="76" y2="154" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#e8cfc4"/>
+              <stop offset="100%" stop-color="#c9a99a"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="product-info">
+        <p class="product-brand">LUMIÈRE × AI LAB</p>
+        <h2 class="product-name">AI Beauty Serum</h2>
+        <p class="product-desc">
+          AIが解析した肌データをもとに開発した、次世代の美容液。<br>
+          独自のナノカプセル技術で、有効成分を肌の深層へ届けます。
+        </p>
+        <div class="product-badges">
+          <span class="badge">無添加</span>
+          <span class="badge">パラベンフリー</span>
+          <span class="badge">皮膚科テスト済</span>
+          <span class="badge">30ml</span>
+        </div>
+        <div class="product-price-row">
+          <span class="price">¥4,200</span>
+          <span class="price-note">/ 1本</span>
+        </div>
+        <p class="tax-note">税込 ¥4,620</p>
+        <button id="add-to-cart-button">カートに追加する</button>
+      </div>
+    </div>
+
+    <section class="features">
+      <h2 class="features-title">こだわりの処方</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <div class="feature-text">
+            <h3>AIパーソナライズ処方</h3>
+            <p>肌質データを学習したAIが、最適な有効成分の配合を設計。あなたの肌に合わせた処方です。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">◈</span>
+          <div class="feature-text">
+            <h3>ナノカプセル浸透技術</h3>
+            <p>独自の微細カプセルが有効成分を保護し、角質層の深部まで届けます。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">◎</span>
+          <div class="feature-text">
+            <h3>72時間保湿持続</h3>
+            <p>塗るだけで72時間、うるおいをキープ。忙しい毎日のスキンケアをサポートします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 LUMIÈRE All Rights Reserved.</footer>
+
+  <div class="toast" id="toast">カートに追加しました ✓</div>
+
+  <script>
+    // ── ページロード時: view_content ──
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'view_content',
+      content_id: 'beauty_serum_001',
+      value: 4200,
+      currency: 'JPY'
+    });
+    console.log('[dataLayer] view_content fired');
+
+    // ── カートに追加ボタン ──
+    document.getElementById('add-to-cart-button').addEventListener('click', function () {
+      // add_to_cart イベント発火
+      window.dataLayer.push({
+        event: 'add_to_cart',
+        content_id: 'beauty_serum_001',
+        value: 4200,
+        currency: 'JPY'
+      });
+      console.log('[dataLayer] add_to_cart fired');
+
+      // Toast表示
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+
+      // 0.8秒後にcart.htmlへ遷移
+      setTimeout(function () {
+        window.location.href = 'cart.html';
+      }, 800);
+    });
+  </script>
+
+</body>
+</html>
