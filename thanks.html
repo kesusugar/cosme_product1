@@ -575,6 +575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.dataLayer = window.dataLayer || [];
 
     var purchaseReady = sessionStorage.getItem('purchase_ready');
+    var finalTotal = Number(sessionStorage.getItem('current_total')) || 4620;
     var debugLog = document.getElementById('debug-log');
 
     if (purchaseReady === 'true') {
@@ -582,7 +583,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.dataLayer.push({
         event: 'purchase',
         content_id: 'beauty_serum_001',
-        value: 4200,
+        value: finalTotal,
         currency: 'JPY'
       });
       console.log('[dataLayer] purchase fired ✅ (purchase_ready === "true")');

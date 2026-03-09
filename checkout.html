@@ -566,10 +566,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <footer>© 2025 LUMIÈRE All Rights Reserved.</footer>
 
   <script>
+    const finalTotal = Number(sessionStorage.getItem('current_total')) || 4620;
+
     // ── ページロード時: initiate_checkout ──
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'initiate_checkout'
+      event: 'initiate_checkout',
+      content_id: 'beauty_serum_001', // IDもセットで送るように追加
+      value: finalTotal,              // 4200固定ではなく、さっきの変数を使う
+      currency: 'JPY'
     });
     console.log('[dataLayer] initiate_checkout fired');
 
@@ -610,7 +615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.dataLayer.push({
         event: 'add_payment_info',
         content_id: 'beauty_serum_001',
-        value: 4200,
+        value: finalTotal,
         currency: 'JPY'
       });
       console.log('[dataLayer] add_payment_info fired (purchase は発火しない)');

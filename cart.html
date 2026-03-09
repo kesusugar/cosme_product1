@@ -451,6 +451,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const subtotal = unitPrice * qty;
       const tax = Math.floor(subtotal * taxRate);
       const total = subtotal + tax;
+
+      // --- 修正箇所：dataLayerに詳細を載せ、金額を保存する ---
+    window.dataLayer.push({
+    event: 'view_cart',
+    content_id: 'beauty_serum_001',
+    value: total,    // 計算された税込合計額
+    currency: 'JPY'
+  });
+  // 金額をメモリに保存（次のページで使うため）
+  sessionStorage.setItem('current_total', total);
+  // --------------------------------------------
       document.getElementById('qty-display').textContent = qty;
       document.getElementById('subtotal').textContent = '¥' + subtotal.toLocaleString();
       document.getElementById('tax-amount').textContent = '¥' + tax.toLocaleString();
