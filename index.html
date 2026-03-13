@@ -6,436 +6,433 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NFTLP8TQ');</script>
+})(window,document,'script','dataLayer','GTM-N2JGLLPW');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUMIÈRE — AI Beauty Serum</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <title>AI Beauty Serum | LUMIÈRE</title>
+
+  <!-- dataLayer 初期化 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
+  <!-- Google Tag Manager をここに設置 -->
+  <!-- GTM Head Script: <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap');
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #faf7f2;
-      --warm-white: #f5f0e8;
-      --gold: #c9a96e;
-      --gold-light: #e8d5b0;
-      --charcoal: #2a2520;
-      --mid: #7a6e65;
-      --accent: #b8860b;
+      --cream: #faf8f5;
+      --blush: #f2e8e0;
+      --rose: #c9a99a;
+      --deep-rose: #a07060;
+      --text: #3a2e2b;
+      --text-light: #8a7570;
+      --gold: #c8a97e;
+      --white: #ffffff;
     }
 
     body {
-      font-family: 'Jost', sans-serif;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
       background: var(--cream);
-      color: var(--charcoal);
+      color: var(--text);
       min-height: 100vh;
     }
 
-    /* NAV */
-    nav {
+    /* ── Header ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #ede8e3;
+      padding: 0 24px;
+      height: 64px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1.4rem 2.5rem;
-      border-bottom: 1px solid var(--gold-light);
-      background: var(--cream);
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 100;
     }
-    .nav-brand {
+    .logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
+      font-size: 22px;
       font-weight: 300;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      text-decoration: none;
-    }
-    .nav-links a {
-      font-size: 0.72rem;
       letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--mid);
+      color: var(--text);
       text-decoration: none;
-      margin-left: 2rem;
-      transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--gold); }
-
-    /* HERO SECTION */
-    .product-hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-      align-items: center;
-    }
-
-    /* PRODUCT IMAGE (SVG inline) */
-    .product-image-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-    .product-image-wrap svg {
-      width: 340px;
-      height: 420px;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
-      animation: float 5s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* PRODUCT DETAILS */
-    .product-details {
-      padding: 2rem 1rem 2rem 3rem;
-    }
-    .product-category {
-      font-size: 0.68rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .product-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-    }
-    .product-name em {
-      font-style: italic;
-      color: var(--gold);
-    }
-    .product-subtitle {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      color: var(--mid);
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-    .divider {
-      width: 48px;
-      height: 1px;
-      background: var(--gold);
-      margin: 1.5rem 0;
-    }
-    .product-description {
-      font-size: 0.9rem;
-      line-height: 1.9;
-      color: var(--mid);
-      margin-bottom: 2rem;
-    }
-
-    /* BENEFITS */
-    .benefits {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-    .benefit-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      color: var(--charcoal);
-    }
-    .benefit-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* PRICE */
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-    .price-currency {
-      font-size: 0.9rem;
-      color: var(--mid);
-    }
-    .price-amount {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      font-weight: 400;
-      color: var(--charcoal);
-    }
-    .price-tax {
-      font-size: 0.7rem;
-      color: var(--mid);
-      letter-spacing: 0.08em;
-    }
-
-    /* <!-- AddToCart Event Target --> */
-    /* ADD TO CART BUTTON */
-    #add-to-cart-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1rem 2.5rem;
-      background: var(--charcoal);
-      color: var(--cream);
-      border: none;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+    .cart-icon {
+      font-size: 20px;
       cursor: pointer;
-      transition: background 0.25s, transform 0.15s;
-      width: 100%;
-      max-width: 320px;
+      color: var(--text-light);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, var(--blush) 0%, var(--cream) 60%);
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      color: var(--rose);
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 7vw, 52px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    /* ── Product Card ── */
+    .product-card {
+      max-width: 480px;
+      margin: 0 auto 60px;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(160,112,96,0.10);
+      padding-bottom: 36px;
+    }
+
+    /* SVG Placeholder Image */
+    .product-image-wrap {
+      background: linear-gradient(145deg, #f9ede7 0%, #ede0d8 100%);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       overflow: hidden;
     }
-    #add-to-cart-button::before {
+    .product-image-wrap::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.35s ease;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.5) 0%, rgba(201,169,154,0.15) 100%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-    #add-to-cart-button:hover::before { transform: scaleX(1); }
-    #add-to-cart-button span { position: relative; z-index: 1; }
-    #add-to-cart-button:active { transform: scale(0.98); }
-
-    .cart-icon {
+    .bottle-svg {
       position: relative;
       z-index: 1;
-      width: 16px;
-      height: 16px;
+      filter: drop-shadow(0 8px 24px rgba(160,112,96,0.25));
     }
 
-    /* BADGE */
-    .product-badge {
-      display: inline-block;
-      background: var(--gold-light);
-      color: var(--accent);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
+    .product-info {
+      padding: 28px 32px 0;
+    }
+    .product-brand {
+      font-size: 11px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      margin-bottom: 1rem;
+      color: var(--rose);
+      margin-bottom: 6px;
     }
-
-    /* content_id hidden meta */
-    .content-meta { display: none; }
-
-    /* BOTTOM STRIP */
-    .trust-strip {
-      border-top: 1px solid var(--gold-light);
-      margin-top: 4rem;
-      padding: 1.5rem 2rem;
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .product-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+    .product-badges {
       display: flex;
-      justify-content: center;
-      gap: 3rem;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
     }
-    .trust-item {
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mid);
-      text-align: center;
+    .badge {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--rose);
+      color: var(--rose);
+    }
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .price-note {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+    .tax-note {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-bottom: 24px;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 700px) {
-      .product-hero {
-        grid-template-columns: 1fr;
-        margin: 1.5rem auto;
-      }
-      .product-image-wrap svg { width: 240px; height: 300px; }
-      .product-details { padding: 1.5rem 0.5rem; }
-      .product-name { font-size: 2.2rem; }
-      .trust-strip { gap: 1.5rem; flex-wrap: wrap; }
-      nav { padding: 1rem 1.2rem; }
-      .nav-links { display: none; }
+    /* ── Add to Cart Button ── */
+    #add-to-cart-button {
+      width: 100%;
+      height: 52px;
+      background: linear-gradient(135deg, var(--deep-rose) 0%, var(--rose) 100%);
+      color: var(--white);
+      border: none;
+      border-radius: 26px;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    #add-to-cart-button:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+    #add-to-cart-button:active {
+      transform: translateY(0);
+    }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--text);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), opacity 0.3s;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 999;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ── Features ── */
+    .features {
+      max-width: 480px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .features-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+    .feature-list {
+      display: grid;
+      gap: 16px;
+    }
+    .feature-item {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .feature-text h3 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .feature-text p {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+      border-top: 1px solid #ede8e3;
+      background: var(--white);
+    }
+
+    @media (max-width: 520px) {
+      .product-info { padding: 22px 22px 0; }
     }
   </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFTLP8TQ"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2JGLLPW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- ViewContent Event -->
+  <!-- Google Tag Manager (noscript) をここに設置 -->
+  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
-<nav>
-  <a class="nav-brand" href="index.html">Lumière</a>
-  <div class="nav-links">
-    <a href="#">Skincare</a>
-    <a href="#">About</a>
-    <a href="cart.html">Cart</a>
-  </div>
-</nav>
+  <header>
+    <a href="index.html" class="logo">LUMIÈRE</a>
+    <span class="cart-icon">🛒</span>
+  </header>
 
-<main>
-  <div class="product-hero">
+  <section class="hero">
+    <p class="hero-eyebrow">New Arrival</p>
+    <h1 class="hero-title">AI Beauty<br>Serum</h1>
+  </section>
 
-    <!-- Product Image (inline SVG — no external fetch needed) -->
-    <div class="product-image-wrap">
-      <svg viewBox="0 0 340 420" xmlns="http://www.w3.org/2000/svg" aria-label="AI Beauty Serum bottle">
-        <defs>
-          <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f5f0e8"/>
-            <stop offset="40%" stop-color="#e8d5b0"/>
-            <stop offset="100%" stop-color="#c9a96e"/>
-          </linearGradient>
-          <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#3a3028"/>
-            <stop offset="100%" stop-color="#1a1510"/>
-          </linearGradient>
-          <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
-            <stop offset="40%" stop-color="rgba(255,255,255,0.35)"/>
-            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-          </linearGradient>
-          <radialGradient id="glowGrad" cx="50%" cy="80%" r="50%">
-            <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.25"/>
-            <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
-          </radialGradient>
-          <filter id="softShadow">
-            <feDropShadow dx="4" dy="8" stdDeviation="10" flood-color="#2a2520" flood-opacity="0.18"/>
-          </filter>
-        </defs>
-
-        <!-- Glow base -->
-        <ellipse cx="170" cy="390" rx="80" ry="18" fill="url(#glowGrad)"/>
-
-        <!-- Bottle body -->
-        <g filter="url(#softShadow)">
-          <!-- Main bottle shape -->
-          <rect x="115" y="130" width="110" height="240" rx="18" fill="url(#bottleGrad)"/>
-          <!-- Shoulder taper top -->
-          <path d="M130,130 Q115,130 115,148 L115,160 Q115,130 170,125 Q225,130 225,160 L225,148 Q225,130 210,130 Z" fill="#e8d5b0"/>
-          <!-- Neck -->
-          <rect x="148" y="85" width="44" height="50" rx="8" fill="#e0cfa0"/>
-          <!-- Cap -->
-          <rect x="138" y="55" width="64" height="38" rx="10" fill="url(#capGrad)"/>
-          <!-- Cap band -->
-          <rect x="138" y="85" width="64" height="5" rx="2" fill="#c9a96e"/>
-          <!-- Cap top detail -->
-          <rect x="155" y="60" width="30" height="3" rx="1.5" fill="#c9a96e" opacity="0.6"/>
-
-          <!-- Shine overlay -->
-          <rect x="115" y="130" width="110" height="240" rx="18" fill="url(#shineGrad)"/>
-
-          <!-- Label area -->
-          <rect x="123" y="165" width="94" height="170" rx="6" fill="rgba(255,255,255,0.6)"/>
-
-          <!-- Label content -->
-          <text x="170" y="195" text-anchor="middle" font-family="serif" font-size="7" fill="#7a6e65" letter-spacing="3" font-style="italic">LUMIÈRE</text>
-          <line x1="135" y1="202" x2="205" y2="202" stroke="#c9a96e" stroke-width="0.5"/>
-
-          <text x="170" y="222" text-anchor="middle" font-family="serif" font-size="11" fill="#2a2520" letter-spacing="0.5" font-weight="bold">AI BEAUTY</text>
-          <text x="170" y="238" text-anchor="middle" font-family="serif" font-size="11" fill="#2a2520" letter-spacing="0.5" font-weight="bold">SERUM</text>
-
-          <line x1="145" y1="246" x2="195" y2="246" stroke="#c9a96e" stroke-width="0.5"/>
-
-          <text x="170" y="262" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#7a6e65" letter-spacing="1.5">ADVANCED FORMULA</text>
-          <text x="170" y="274" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#9a8e85" letter-spacing="1">30ml · 1.0 fl oz</text>
-
-          <!-- Decorative diamond -->
-          <polygon points="170,288 176,295 170,302 164,295" fill="none" stroke="#c9a96e" stroke-width="0.8"/>
-          <polygon points="170,291 173,295 170,299 167,295" fill="#c9a96e" opacity="0.5"/>
-
-          <!-- Bottom label text -->
-          <text x="170" y="322" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="#9a8e85" letter-spacing="0.5">AI-POWERED SKINCARE</text>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Product Details -->
-    <div class="product-details">
-      <div class="product-category">Luxury Skincare</div>
-      <div class="product-badge">New Formula</div>
-
-      <h1 class="product-name">AI Beauty<br /><em>Serum</em></h1>
-      <p class="product-subtitle">Advanced Regenerative Complex</p>
-
-      <div class="divider"></div>
-
-      <p class="product-description">
-        AIが導く次世代美容液。独自の深層学習アルゴリズムが肌状態を分析し、
-        最適な有効成分を配合。ヒアルロン酸・レチノール・ナイアシンアミドの
-        トリプルコンプレックスが、輝く透明感と若々しいハリをもたらします。
-      </p>
-
-      <div class="benefits">
-        <div class="benefit-item"><span class="benefit-dot"></span>AIによる最適配合テクノロジー</div>
-        <div class="benefit-item"><span class="benefit-dot"></span>72時間持続保湿</div>
-        <div class="benefit-item"><span class="benefit-dot"></span>敏感肌・全肌質対応</div>
-        <div class="benefit-item"><span class="benefit-dot"></span>パラベンフリー・無香料</div>
-      </div>
-
-      <div class="price-row">
-        <span class="price-currency">¥</span>
-        <span class="price-amount">4,200</span>
-        <span class="price-tax">税込</span>
-      </div>
-
-      <!-- content_id metadata (hidden, for GTM/Pixel reference) -->
-      <div class="content-meta" data-content-id="beauty_serum_001" data-price="4200" data-currency="JPY"></div>
-
-      <!-- AddToCart Event Target -->
-      <button id="add-to-cart-button" onclick="addToCart()">
-        <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 01-8 0"/>
+  <main>
+    <div class="product-card">
+      <div class="product-image-wrap">
+        <!-- CSS/SVGによる美容液ボトルのプレースホルダー -->
+        <svg class="bottle-svg" width="100" height="200" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- キャップ -->
+          <rect x="36" y="8" width="28" height="14" rx="5" fill="#b08878"/>
+          <!-- ネック -->
+          <rect x="42" y="22" width="16" height="12" rx="3" fill="#c9a99a"/>
+          <!-- ボトル本体 -->
+          <rect x="24" y="34" width="52" height="120" rx="14" fill="url(#bottleGrad)"/>
+          <!-- ハイライト -->
+          <rect x="30" y="42" width="10" height="60" rx="5" fill="rgba(255,255,255,0.35)"/>
+          <!-- ラベル -->
+          <rect x="28" y="88" width="44" height="52" rx="6" fill="rgba(255,255,255,0.85)"/>
+          <text x="50" y="108" font-family="Georgia,serif" font-size="7" fill="#a07060" text-anchor="middle" letter-spacing="1">AI BEAUTY</text>
+          <text x="50" y="120" font-family="Georgia,serif" font-size="6" fill="#c9a99a" text-anchor="middle" letter-spacing="1">SERUM</text>
+          <line x1="34" y1="125" x2="66" y2="125" stroke="#e0cfc8" stroke-width="0.8"/>
+          <text x="50" y="134" font-family="Georgia,serif" font-size="5" fill="#b08878" text-anchor="middle">30ml</text>
+          <!-- ボトム -->
+          <ellipse cx="50" cy="154" rx="26" ry="5" fill="rgba(0,0,0,0.06)"/>
+          <defs>
+            <linearGradient id="bottleGrad" x1="24" y1="34" x2="76" y2="154" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#e8cfc4"/>
+              <stop offset="100%" stop-color="#c9a99a"/>
+            </linearGradient>
+          </defs>
         </svg>
-        <span>カートに追加</span>
-      </button>
+      </div>
+
+      <div class="product-info">
+        <p class="product-brand">LUMIÈRE × AI LAB</p>
+        <h2 class="product-name">AI Beauty Serum</h2>
+        <p class="product-desc">
+          AIが解析した肌データをもとに開発した、次世代の美容液。<br>
+          独自のナノカプセル技術で、有効成分を肌の深層へ届けます。
+        </p>
+        <div class="product-badges">
+          <span class="badge">無添加</span>
+          <span class="badge">パラベンフリー</span>
+          <span class="badge">皮膚科テスト済</span>
+          <span class="badge">30ml</span>
+        </div>
+        <div class="product-price-row">
+          <span class="price">¥4,200</span>
+          <span class="price-note">/ 1本</span>
+        </div>
+        <p class="tax-note">税込 ¥4,620</p>
+        <button id="add-to-cart-button">カートに追加する</button>
+      </div>
     </div>
-  </div>
 
-  <div class="trust-strip">
-    <div class="trust-item">送料無料<br /><small style="font-size:0.6rem;color:#b0a090;">¥3,000以上</small></div>
-    <div class="trust-item">30日間<br /><small style="font-size:0.6rem;color:#b0a090;">返品保証</small></div>
-    <div class="trust-item">安心決済<br /><small style="font-size:0.6rem;color:#b0a090;">SSL暗号化</small></div>
-  </div>
-</main>
+    <section class="features">
+      <h2 class="features-title">こだわりの処方</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="feature-icon">✦</span>
+          <div class="feature-text">
+            <h3>AIパーソナライズ処方</h3>
+            <p>肌質データを学習したAIが、最適な有効成分の配合を設計。あなたの肌に合わせた処方です。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">◈</span>
+          <div class="feature-text">
+            <h3>ナノカプセル浸透技術</h3>
+            <p>独自の微細カプセルが有効成分を保護し、角質層の深部まで届けます。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">◎</span>
+          <div class="feature-text">
+            <h3>72時間保湿持続</h3>
+            <p>塗るだけで72時間、うるおいをキープ。忙しい毎日のスキンケアをサポートします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script>
-  function addToCart() {
-    // 1. GTMにイベントを飛ばす（これを追加！）
+  <footer>© 2025 LUMIÈRE All Rights Reserved.</footer>
+
+  <div class="toast" id="toast">カートに追加しました ✓</div>
+
+  <script>
+    // ── ページロード時: view_content ──
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-        'event': 'addToCart', // ここがGTMのTrigger設定と一致します
-        'content_id': 'beauty_serum_001',
-        'value': 4200,
-        'currency': 'JPY'
-    });
-    // Store cart info for subsequent pages
-    sessionStorage.setItem('cart', JSON.stringify({
-      name: 'AI Beauty Serum',
+      event: 'view_content',
       content_id: 'beauty_serum_001',
-      price: 4200,
-      currency: 'JPY',
-      quantity: 1
-    }));
-    window.location.href = 'cart.html';
-  }
-</script>
+      value: 4200,
+      currency: 'JPY'
+    });
+    console.log('[dataLayer] view_content fired');
+
+    // ── カートに追加ボタン ──
+    document.getElementById('add-to-cart-button').addEventListener('click', function () {
+      // add_to_cart イベント発火
+      window.dataLayer.push({
+        event: 'add_to_cart',
+        content_id: 'beauty_serum_001',
+        value: 4200,
+        currency: 'JPY'
+      });
+      console.log('[dataLayer] add_to_cart fired');
+
+      // Toast表示
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+
+      // 0.8秒後にcart.htmlへ遷移
+      setTimeout(function () {
+        window.location.href = 'cart.html';
+      }, 800);
+    });
+  </script>
 
 </body>
 </html>
